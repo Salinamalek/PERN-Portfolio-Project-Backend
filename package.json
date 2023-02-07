@@ -13,6 +13,8 @@
   "main": "server.js",
   "devDependencies": {},
   "scripts": {
+    "dbinit": "psql -U postgres -f db/schema.sql",
+    "dbseed": "psql -U postgres -f db/seed.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
