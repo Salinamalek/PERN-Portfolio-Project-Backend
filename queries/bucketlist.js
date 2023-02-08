@@ -1,4 +1,3 @@
-const { one } = require("../db/dbConfig.js");
 const db = require("../db/dbConfig.js");
 
 const getAllList = async () => {
