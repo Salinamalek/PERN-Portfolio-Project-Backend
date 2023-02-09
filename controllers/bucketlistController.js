@@ -9,6 +9,8 @@ const {
   deleteList,
 } = require("../queries/bucketlist.js");
 
+const { validateRequest } = require("../validations.js");
+
 // GET ALL
 lists.get("/", async (req, res) => {
   const allLists = await getAllList();
@@ -21,7 +23,7 @@ lists.get("/", async (req, res) => {
 });
 
 // GET ONE
-lists.get(":id", async (req, res) => {
+lists.get("/:id", async (req, res) => {
   const { id } = req.params;
   const list = await getOneList(id);
 
@@ -33,7 +35,7 @@ lists.get(":id", async (req, res) => {
 });
 
 // CREATE
-lists.post("/", async (req, res) => {
+lists.post("/", validateRequest, async (req, res) => {
   const newList = await createList(req.body);
   if (!newList.message) {
     res.status(200).json(newList);
@@ -43,7 +45,7 @@ lists.post("/", async (req, res) => {
 });
 
 // UPDATE
-lists.put("/:id", async (req, res) => {
+lists.put("/:id", validateRequest, async (req, res) => {
   const { id } = req.params;
   const updatedList = await updateList(req.body, id);
   if (!updatedList.message) {
