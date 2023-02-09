@@ -8,8 +8,8 @@ CREATE TABLE bucketlist (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
     description TEXT DEFAULT 'no description',
-    image TEXT DEFAULT 'no image found',
     location TEXT,
+    image TEXT DEFAULT 'no image found',
     visited BOOLEAN
 );
 
