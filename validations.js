@@ -24,29 +24,29 @@ const validateRequest = (req, res, next) => {
     image = "https://";
   }
   validateUrl(image, res);
+};
 
-  const validateUrl = (value, res) => {
-    const urlStart = value.slice(0, 7);
-    const urlStarts = value.slice(0, 8);
+const validateUrl = (value, res) => {
+  const urlStart = value.slice(0, 7);
+  const urlStarts = value.slice(0, 8);
 
-    if (urlStart !== "http://" && urlStarts !== "https://") {
-      res
-        .status(400)
-        .json({ Error: "image url must begin with 'http://' or 'https://' " });
-    }
-  };
+  if (urlStart !== "http://" && urlStarts !== "https://") {
+    res
+      .status(400)
+      .json({ Error: "image url must begin with 'http://' or 'https://' " });
+  }
+};
 
-  const nameConversion = (string) => {
-    if (string.length < 2) {
-      return string;
-    }
+const nameConversion = (string) => {
+  if (string.length < 2) {
+    return string;
+  }
 
-    return string
-      .toLowerCase()
-      .split(` `)
-      .map((el) => `${el.charAt(0).toUpperCase()}${el.slice(1)}`)
-      .join(` `);
-  };
+  return string
+    .toLowerCase()
+    .split(` `)
+    .map((el) => `${el.charAt(0).toUpperCase()}${el.slice(1)}`)
+    .join(` `);
 };
 
 module.exports = {

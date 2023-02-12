@@ -37,6 +37,7 @@ lists.get("/:id", async (req, res) => {
 // CREATE
 lists.post("/", validateRequest, async (req, res) => {
   const newList = await createList(req.body);
+
   if (!newList.message) {
     res.status(200).json(newList);
   } else {
