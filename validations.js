@@ -24,6 +24,7 @@ const validateRequest = (req, res, next) => {
     image = "https://";
   }
   validateUrl(image, res);
+  next();
 };
 
 const validateUrl = (value, res) => {

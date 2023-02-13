@@ -24,7 +24,7 @@ const getOneList = async (idValue) => {
 const createList = async (list) => {
   try {
     const newList = await db.one(
-      "INSERT INTO bucketlist (name, description, image, location, visited) VALUES ($1, $2, $3, $4, %5) RETURNING *",
+      "INSERT INTO bucketlist (name, description, image, location, visited) VALUES ($1, $2, $3, $4, $5) RETURNING *",
       [list.name, list.description, list.image, list.location, list.visited]
     );
     return newList;
