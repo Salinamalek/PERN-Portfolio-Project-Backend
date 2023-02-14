@@ -10,7 +10,7 @@ CREATE TABLE bucketlist (
     description TEXT DEFAULT 'no description',
     location TEXT,
     image TEXT DEFAULT 'no image found',
-    visited BOOLEAN
+    completed BOOLEAN
 );
 
 -- devs table

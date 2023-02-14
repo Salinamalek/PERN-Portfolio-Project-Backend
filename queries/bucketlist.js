@@ -24,8 +24,8 @@ const getOneList = async (idValue) => {
 const createList = async (list) => {
   try {
     const newList = await db.one(
-      "INSERT INTO bucketlist (name, description, image, location, visited) VALUES ($1, $2, $3, $4, $5) RETURNING *",
-      [list.name, list.description, list.image, list.location, list.visited]
+      "INSERT INTO bucketlist (name, description, image, location, completed) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+      [list.name, list.description, list.image, list.location, list.completed]
     );
     return newList;
   } catch (error) {
@@ -36,13 +36,13 @@ const createList = async (list) => {
 const updateList = async (list, idValue) => {
   try {
     const updatedList = await db.one(
-      "UPDATE bucketlist SET name=$1, description=$2, image=$3, location=$4, visited=$5 WHERE id=$6 RETURNING *",
+      "UPDATE bucketlist SET name=$1, description=$2, image=$3, location=$4, completed=$5 WHERE id=$6 RETURNING *",
       [
         list.name,
         list.description,
         list.image,
         list.location,
-        list.visited,
+        list.completed,
         idValue,
       ]
     );
