@@ -27,6 +27,18 @@ const validateRequest = (req, res, next) => {
   next();
 };
 
+const confirmComplete = (req, res, next) => {
+  const { completed } = req.body;
+
+  if (!completed) {
+    req.body.completed = false;
+  } else {
+    req.body.completed = true;
+  }
+
+  next();
+};
+
 const validateUrl = (value, res) => {
   const urlStart = value.slice(0, 7);
   const urlStarts = value.slice(0, 8);
@@ -52,4 +64,5 @@ const nameConversion = (string) => {
 
 module.exports = {
   validateRequest,
+  confirmComplete,
 };
