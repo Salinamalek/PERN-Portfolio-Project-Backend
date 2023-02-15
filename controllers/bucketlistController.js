@@ -16,8 +16,8 @@ lists.get("/", async (req, res) => {
   // console.log("hit GET / bucketlist");
   const allLists = await getAllList();
 
+  console.log(allLists);
   if (allLists.length) {
-    console.log(allLists);
     res.status(200).json(allLists);
   } else {
     res.status(500).json({ Error: "server error" });
