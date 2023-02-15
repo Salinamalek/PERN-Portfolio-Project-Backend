@@ -13,7 +13,7 @@ const { validateRequest } = require("../validations.js");
 
 // GET ALL
 lists.get("/", async (req, res) => {
-  console.log("hit GET / bucketlist");
+  // console.log("hit GET / bucketlist");
   const allLists = await getAllList();
 
   if (allLists.length) {
