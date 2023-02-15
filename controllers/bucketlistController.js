@@ -17,6 +17,7 @@ lists.get("/", async (req, res) => {
   const allLists = await getAllList();
 
   if (allLists.length) {
+    console.log(allLists);
     res.status(200).json(allLists);
   } else {
     res.status(500).json({ Error: "server error" });
