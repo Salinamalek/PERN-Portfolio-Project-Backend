@@ -15,7 +15,7 @@ app.use("/bucketlist", bucketlistController);
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.status(200).send("Bucket List Server");
+  res.status(200).send("Welcome to Bucket List Server");
 });
 
 app.get("/not-found", (req, res) => {

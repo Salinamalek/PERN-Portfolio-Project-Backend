@@ -26,10 +26,10 @@ lists.get("/", async (req, res) => {
 // GET ONE
 lists.get("/:id", async (req, res) => {
   const { id } = req.params;
-  const list = await getOneList(id);
+  const listed = await getOneList(id);
   // console.log("bucketlist", bucketlist);
-  if (!list.message) {
-    res.status(200).json(list);
+  if (!listed.message) {
+    res.status(200).json(listed);
   } else {
     res.redirect("/not-found");
   }
