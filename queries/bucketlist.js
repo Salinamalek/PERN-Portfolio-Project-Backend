@@ -1,10 +1,12 @@
 const db = require("../db/dbConfig.js");
 
 const getAllList = async () => {
+  console.log("hit getAll bucketList");
   try {
     const allList = await db.any("SELECT * FROM bucketlist");
     return allList;
   } catch (error) {
+    console.log("db error", error);
     return error;
   }
 };
