@@ -4,6 +4,7 @@ CREATE DATABASE list_dev;
 \c list_dev; 
 
 DROP TABLE IF EXISTS bucketlist;
+
 CREATE TABLE bucketlist (
     id SERIAL PRIMARY KEY,
     name TEXT NOT NULL,
