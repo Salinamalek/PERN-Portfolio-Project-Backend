@@ -13,10 +13,7 @@ const { validateRequest } = require("../validations.js");
 
 // GET ALL
 lists.get("/", async (req, res) => {
-  // console.log("hit GET / bucketlist");
   const allLists = await getAllList();
-
-  console.log(allLists);
   if (allLists.length) {
     res.status(200).json(allLists);
   } else {
@@ -28,7 +25,6 @@ lists.get("/", async (req, res) => {
 lists.get("/:id", async (req, res) => {
   const { id } = req.params;
   const listed = await getOneList(id);
-  // console.log("bucketlist", bucketlist);
   if (!listed.message) {
     res.status(200).json(listed);
   } else {
