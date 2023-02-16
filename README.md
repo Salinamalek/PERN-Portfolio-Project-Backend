@@ -40,7 +40,7 @@ PG_USER=postgres
 - `npm run dbinit` - initialize a new database and create tables.
 - `npm run dbseed` - seed the table(s) with some data.
 - `nodemon` - confirm that this is running on port 3333.
-- Visit http://localhost:3333/snacks/ and make sure you see some snack data in the form of an array of objects.
+- Visit http://localhost:3005/bucketlist/ and make sure you see some bucketlist data in the form of an array of objects.
 - `npm run test` - to run the back-end tests.
 
 ## Resources
