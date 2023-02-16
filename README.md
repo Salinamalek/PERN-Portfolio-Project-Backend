@@ -43,6 +43,11 @@ PG_USER=postgres
 - Visit http://localhost:3005/bucketlist/ and make sure you see some bucketlist data in the form of an array of objects.
 - `npm run test` - to run the back-end tests.
 
+### Screenshots
+
+Here is an example seed data generated from ChatGPT I used in my project.
+![ChatGPT Seed Data] (/assets/chatGPT-seed-data.png)
+
 ## Resources
 
 Use the resources below to deploy your application.
