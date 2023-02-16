@@ -46,7 +46,7 @@ PG_USER=postgres
 ### Screenshots
 
 Here is an example seed data generated from ChatGPT I used in my project.
-![ChatGPT Seed Data] (/assets/chatGPT-seed-data.png)
+![ChatGPT Seed Data](/assets/chatGPT-seed-data.png)
 
 ## Resources
 
